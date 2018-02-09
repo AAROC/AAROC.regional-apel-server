@@ -1,6 +1,8 @@
+[![Build Status](https://travis-ci.org/AAROC/AAROC.regional-apel-server.svg?branch=master)](https://travis-ci.org/AAROC/AAROC.regional-apel-server)
+
 # Role Name
 
-Adds a APEL server service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
+Adds a [APEL](https://github.com/apel/apel) server service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
 to install the service:
 
 ```
