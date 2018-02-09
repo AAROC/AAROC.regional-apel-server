@@ -17,6 +17,10 @@ install:
 script:
   - molecule lint
   - molecule syntax
+  - molecule create -s docker
+  - molecule converge -s docker -- -e needs_certificate=false
+  - molecule verify -s docker
+  - molecule destroy
 after_success:
 after_failure:
 after_script:
