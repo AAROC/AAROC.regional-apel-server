@@ -1,2 +1,7 @@
 ---
 # tasks file for AAROC.regional-apel-server
+- name: Get packages
+  get_url:
+    url: "{{ release_url }}/{{ version }}/{{ item }}-{{ version}}.el7.rpm"
+    dest: "/tmp/{{ item }}"
+

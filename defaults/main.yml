@@ -1,2 +1,8 @@
 ---
 # defaults file for AAROC.regional-apel-server
+packages:
+  - apel-lib
+  - apel-server
+release_url: 
+  https://github.com/apel/apel/releases/download
+version: 1.6.0-1
