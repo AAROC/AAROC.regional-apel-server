@@ -1,0 +1,25 @@
+sudo: required
+dist: trusty
+addons:
+  apt:
+    packages:
+    - python-pip
+    - libffi-dev git
+    - libssl-dev
+language: python
+python:
+- 2.7
+before_install:
+- pip install --upgrade pip
+install:
+- pip install -r requirements.txt
+script:
+- molecule lint
+- molecule syntax
+after_success: 
+after_failure: 
+after_script: 
+notifications:
+  slack:
+    secure: OzMJLSErghBXe25jtiJ+IRBIqsaaQapxG2wLomSp4DbodGChj6y5rMH3x+82bbglCmpMDaHqiK1YLCcj4h129fTnFbkO10Ci8Ja/SlvLku5IhurUXvcPIhjZGi3uJKZBSXkzeWn9NZPEzK0Ama+K2P13F4G9TW3ZGIPRFi/UwNC7WdmCiRv+UNV04X6MTOzm0vOyDuwhm16vuegMkIFgS4ZYxR14vif+RJBAYRwsw4ibHy0q8E//vLWMu1+ElShZw/O6cOPOebaSLdcybcUr0/cZPDVFSVju3nTcl3rHMSgBgriCXbEr9acgYGQWMBIHqciOoCHQ9P0XyT3ze/mUNhKscqC+5QgvykPzzbtx36HACaBev7spPF0DQbQ5eBTehABSUusmrFky9ImZX5KrVEC7KYWIDTulCquMQgjGJ1DB4Jqan5Akp59XNYurmAMhAF/livZvYPYwF51JviU0uokjHy6clSOKidSEjNz/h4/we3ZZQEr3+1u7mrzjNaqQ7fofSR3kl+1f/7cknfIrkOwcAp4cQJFiTDlPLUtyh0ApgvluSmtOWY6MOy5c6d9wzZpJhfNUYLPg+07KkDTL4W2Qdq+hQC9QVGbaI7a9tcvOrbqqh6sRLRJ8XL7yMpk6zoOi3MCOI0O0Ql1VQMBGR36G4/jcCCgVnnF5ixAMHi4=
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
