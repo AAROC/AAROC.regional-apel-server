@@ -21,7 +21,7 @@ script:
   - molecule create -s docker
   - molecule converge -s docker -- -e needs_certificate=false
   - molecule verify -s docker
-  - molecule destroy
+  - molecule destroy -s docker
 after_success:
 after_failure:
 after_script:
