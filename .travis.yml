@@ -15,9 +15,9 @@ before_install:
 install:
   - pip install -r requirements.txt
 script:
-  - molecule lint
-  - molecule syntax
-  - molecule requirements
+  - molecule lint -e  docker
+  - molecule syntax -e docker
+  - molecule requirements -e docker
   - molecule create -s docker
   - molecule converge -s docker -- -e needs_certificate=false
   - molecule verify -s docker
