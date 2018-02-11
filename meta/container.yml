@@ -3,10 +3,10 @@
 # For example:
 #
 apel-server:
-  image:
+  image: mysql:5.7
   ports:
-    - "80:80"
-  command: ['/usr/bin/dumb-init', '/usr/sbin/apache2ctl', '-D', 'FOREGROUND']
+    - "3306:3306"
+  command: ['mysqld']
   dev_overrides:
     environment:
       - "DEBUG=1"
