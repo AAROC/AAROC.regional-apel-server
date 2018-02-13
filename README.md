@@ -28,12 +28,10 @@ $ ansible-container install AAROC.APEL-server
     $ ansible-contiainer init
     ```
 
-- Continue listing any prerequisites here...
-
 
 ## Role Variables
 
-
+There are some default variables in `defaults` - take particular care to override the `version` of the apel server and ssm packages if you want test stuff.
 
 ## Dependencies
 

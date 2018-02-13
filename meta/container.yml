@@ -3,10 +3,12 @@
 # For example:
 #
 apel-server:
-  image: mysql:5.7
+  from: centos:7
   ports:
     - "3306:3306"
-  command: ['mysqld']
+  roles:
+    - AAROC.AAROC_regional-apel-server
+  command: ['/bin/sleep','infinity']
   dev_overrides:
     environment:
       - "DEBUG=1"

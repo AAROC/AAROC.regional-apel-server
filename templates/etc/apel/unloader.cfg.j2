@@ -1,0 +1,42 @@
+[unloader]
+dir_location=/var/spool/apel/
+
+# The permitted tables are:
+# VJobRecords
+# VSummaries
+# VNormalisedSummaries
+# VSuperSummaries
+# VNormalisedSuperSummaries
+# VCloudRecords
+table_name = VJobRecords
+
+# Only for job records and summaries
+send_ur = false
+local_jobs = true
+
+withhold_dns = false
+
+# Optional: send ONLY these VOs to the APEL server.
+# This overrides exclude_vos.
+#include_vos = atlas,cms,lhcb
+include_vos = "{% for vo in vos %}{{ vo }},{% endfor %}"
+# Optional: do not send these VOs to the APEL server.
+# This does not take effect if include_vos is set. 
+#exclude_vos = atlas,cms
+
+# Which records to send:
+# latest - Just send the new records to the APEL server.
+# gap    - Send records from between the specified dates (inclusive). This is
+#          only for individual job records.
+# all    - Send all records to the APEL server.  Don't do this for individual
+#          job records without talking to the APEL team!
+interval = latest
+
+# Only used if interval = gap
+gap_start = "{{ gap_start |default(2014-01-01)}}"
+gap_end = "{{ gap_end | default(2014-01-31)}}"
+
+[logging]
+logfile = /var/log/apel/unloader.log
+level = INFO
+console = true

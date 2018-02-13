@@ -23,3 +23,4 @@
     name: "{{ server.release_url}}/{{ server.version }}/{{ item }}-{{ server.version }}.el7.noarch.rpm"
     state: present
   with_items: "{{ server.packages}}"
+

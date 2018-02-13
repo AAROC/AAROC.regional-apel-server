@@ -18,3 +18,8 @@ server:
     - apel-server
   release_url: https://github.com/apel/apel/releases/download
   version: 1.6.0-1
+
+  # APEL auth settings
+  auth:
+    # HTTP traffic proxy
+    proxy: http://wwwcache.rl.ac.uk:8080
