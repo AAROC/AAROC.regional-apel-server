@@ -8,7 +8,7 @@ apel-server:
     - "3306:3306"
   roles:
     - AAROC.AAROC_regional-apel-server
-  command: ['/bin/sleep','infinity']
+  command: ['/bin/sleep', 'infinity']
   dev_overrides:
     environment:
       - "DEBUG=1"
