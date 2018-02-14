@@ -20,4 +20,7 @@ def test_config_files(host):
     apel_auth_config_file = host.file('/etc/apel/auth.cfg')
     apel_db_config_file   = host.file('/etc/apel/db.cfg')
     apel_receiver_file    = host.file('/etc/apel/receiver.cfg')
-    assert apel_config_file.exists  
+    
+    assert apel_auth_config_file.exists
+    assert apel_db_config_file.exists
+    assert apel_receiver_file.exists
