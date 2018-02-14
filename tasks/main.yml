@@ -1,25 +1,3 @@
 ---
 # tasks file for AAROC.regional-apel-server
-- name: Ensure EPEL present
-  package:
-    name: epel-release
-    state: present
-    update_cache: true
-
-- name: Install prerequisites
-  package:
-    name: "{{ item }}"
-    state: "present"
-  with_items: "{{ prerequisites }}"
-
-- name: Install SSM packages
-  package:
-    name: "{{ ssm.release_url }}/{{ ssm.version }}/{{ item }}-{{ ssm.version}}.el7.noarch.rpm"
-    state: present
-  with_items: "{{ ssm.packages}}"
-
-- name: Install APEL packages
-  package:
-    name: "{{ server.release_url}}/{{ server.version }}/{{ item }}-{{ server.version }}.el7.noarch.rpm"
-    state: present
-  with_items: "{{ server.packages}}"
+- include: install.yml
