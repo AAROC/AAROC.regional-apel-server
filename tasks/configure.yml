@@ -1,0 +1,9 @@
+---
+# tasks for openstack deployment
+- name: "Template APEL and SSM config files"
+  template:
+    src: "etc/apel/{{ item }}.j2"
+    dest: "/etc/apel/{{ item }}"
+    owner: root
+    group: root
+  with_items: "{{ config_files }}"

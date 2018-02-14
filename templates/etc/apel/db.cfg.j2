@@ -2,15 +2,15 @@
 # type of database
 backend = mysql
 # host with database
-hostname = "{{ db_host | default(localhost)}}"
+hostname = "{{ db_host | default('localhost')}}"
 # port to connect to
 port = 3306
 # database name
-name = "{{ apel_database | default(apelserver) }}"
+name = "{{ apel_database | default('apelserver') }}"
 # database user
-username = "{{ db_user | default(root)}}"
+username = "{{ db_user | default('apel')}}"
 # password for database
-password = "{{ db_password | default(passwd)}}"
+password = "{{ db_user_password | default('apel')}}"
 # how many records should be put/fetched to/from database 
 # in single query
 records = 1000
