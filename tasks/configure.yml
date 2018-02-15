@@ -7,3 +7,17 @@
     owner: root
     group: root
   with_items: "{{ config_files }}"
+
+- name: "Ensure the db deploy dir"
+  file:
+    path: /deploy
+    state: directory
+
+
+- name: "Put the sql definitions in the right place"
+  copy:
+    remote_src: yes
+    src: "/usr/share/apel/{{ item }}"
+    dest: /deploy
+  with_items:
+    - server.sql
