@@ -1,5 +1,5 @@
 ---
-  # defaults file for AAROC.regional-apel-server
+# defaults file for AAROC.regional-apel-server
 prerequisites:
 # These are required for SSM
   - mysql
@@ -22,14 +22,14 @@ ssm:
   packages:
     - apel-ssm
   release_url: https://github.com/apel/ssm/releases/download
-  version: 2.2.0-1
+  version: 3.2.1-1
 
 server:
   packages:
     - apel-lib
     - apel-server
   release_url: https://github.com/apel/apel/releases/download
-  version: 1.6.0-1
+  version: 1.9.1-1
 
   # APEL auth settings
   auth:
